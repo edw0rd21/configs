@@ -10,8 +10,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local fish_path = "/opt/homebrew/bin/fish"
-
 local config = {}
 -- Use config builder object if possible
 if wezterm.config_builder then
@@ -123,7 +121,6 @@ config.key_tables = {
 }
 
 -- Tab bar
--- I don't like the look of "fancy" tab bar
 config.use_fancy_tab_bar = false
 config.status_update_interval = 1000
 config.tab_bar_at_bottom = false
