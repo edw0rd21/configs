@@ -19,12 +19,12 @@ end
 -- Settings
 config.default_prog = { "wsl.exe", "--distribution", "Ubuntu" }
 
-config.color_scheme = "Gruvbox Dark (Gogh)"
+-- config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font_with_fallback({
 	{ family = "JetBrains Mono", scale = 1.0, weight = "Regular" },
 	{ family = "FantasqueSansM Nerd Font", scale = 1.3 },
 })
-config.window_background_opacity = 0.9
+-- config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
