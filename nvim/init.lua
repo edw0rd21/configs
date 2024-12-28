@@ -230,59 +230,6 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  --nvim-tree setup
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    lazy = false,
-
-    config = function()
-      --disable netrw
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
-      --enable 24-bit colors
-      vim.opt.termguicolors = true
-
-      require('nvim-tree').setup {
-        view = {
-          width = 30,
-          side = 'left',
-          number = false,
-          relativenumber = false,
-        },
-
-        git = {
-          enable = true,
-        },
-
-        renderer = {
-          icons = {
-            show = {
-              file = true,
-              folder = true,
-              folder_arrow = true,
-              git = true,
-            },
-          },
-          group_empty = true,
-        },
-        filters = {
-          dotfiles = true,
-        },
-      }
-
-      --Key mapping
-      vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
-        noremap = true,
-        silent = true,
-        desc = 'Toggle File Explorer',
-      })
-    end,
-  },
-
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -986,6 +933,8 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+}, {
+  checker = { enabled = true },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
